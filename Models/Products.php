@@ -21,3 +21,38 @@ class Products
         $this->price = $price;
     }
 }
+
+class Food extends Products
+{
+    public $weight_kg;
+    public $taste;
+
+    public function __construct(String $name, int $id, String $description, String $img, Category $category, int $price, int $weight_kg, String $taste)
+    {
+        parent::__construct($name, $id, $description, $img, $category, $price);
+        $this->weight_kg = $weight_kg;
+        $this->taste = $taste;
+    }
+}
+
+class Toys extends Products
+{
+    public $material;
+
+    public function __construct(String $name, int $id, String $description, String $img, Category $category, int $price, int $material)
+    {
+        parent::__construct($name, $id, $description, $img, $category, $price);
+        $this->material = $material;
+    }
+}
+
+class AminalsBed extends Products
+{
+    public $dimension;
+
+    public function __construct(String $name, int $id, String $description, String $img, Category $category, int $price, int $dimension)
+    {
+        parent::__construct($name, $id, $description, $img, $category, $price);
+        $this->dimension = $dimension;
+    }
+}

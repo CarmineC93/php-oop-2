@@ -8,7 +8,7 @@ $ciotola = new Products(
     01,
     "Ciotola per gatti di medie dimensioni",
     "",
-    $category,
+    new Category("cane"),
     50
 );
 
