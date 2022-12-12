@@ -1,0 +1,13 @@
+
+.card{
+    width: 200px;
+}
+
+.card img{
+    max-width: 100%;
+    max-height: 200px;
+}
+
+.card .card-body .icon{
+    width: 30px;
+}

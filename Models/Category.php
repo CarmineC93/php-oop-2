@@ -9,12 +9,14 @@ class Category
         $this->name = $name;
     }
 
-    public function printIcon($name)
+    public function printIcon()
     {
-        if ($name = "cani") {
-            return "/assets/cani.jpg";
-        } else if ($name = "gatti") {
-            return "/assets/gatti..jpg";
+        if ($this->name = "cani") {
+            $result = "./assets/cane.jpg";
+        } elseif ($this->name = "gatti") {
+            $result = "./assets/gatti.jpg";
         };
+
+        return $result;
     }
 }
