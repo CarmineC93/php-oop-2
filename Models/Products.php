@@ -33,6 +33,16 @@ class Food extends Products
         $this->weight_kg = $weight_kg;
         $this->taste = $taste;
     }
+
+    public function printWeight_kg()
+    {
+        return "$this->weight_kg";
+    }
+
+    public function printTaste()
+    {
+        return "$this->taste";
+    }
 }
 
 class Toys extends Products
@@ -44,6 +54,11 @@ class Toys extends Products
         parent::__construct($name, $id, $description, $img, $category, $price);
         $this->material = $material;
     }
+
+    public function printMaterial()
+    {
+        return "$this->material";
+    }
 }
 
 class AminalsBed extends Products
@@ -54,5 +69,10 @@ class AminalsBed extends Products
     {
         parent::__construct($name, $id, $description, $img, $category, $price);
         $this->dimension = $dimension;
+    }
+
+    public function printDimension()
+    {
+        return $this->dimension;
     }
 }

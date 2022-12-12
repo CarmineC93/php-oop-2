@@ -33,7 +33,9 @@ require_once __DIR__ . "/db_.php";
                                 <img class="icon" src="<?php echo $product->category->printIcon() ?>" alt="">
                                 <p class="card-text"><?php echo $product->category->name; ?></p>
                                 <p class="card-text"><?php echo $product->description; ?></p>
-                                <p class="card-text"><?php echo $product->dimension; ?></p>
+                                <!-- <p class="card-text"><?php //echo $product->printDimension() 
+                                                            ?></p> -->
+
 
 
                                 <a href="#" class="btn btn-primary">Compra</a>

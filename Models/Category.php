@@ -11,9 +11,9 @@ class Category
 
     public function printIcon()
     {
-        if ($this->name = "cani") {
+        if ($this->name === "cani") {
             $result = "./assets/cane.jpg";
-        } elseif ($this->name = "gatti") {
+        } elseif ($this->name === "gatti") {
             $result = "./assets/gatti.jpg";
         };
 
