@@ -39,7 +39,7 @@ class Toys extends Products
 {
     public $material;
 
-    public function __construct(String $name, int $id, String $description, String $img, Category $category, int $price, int $material)
+    public function __construct(String $name, int $id, String $description, String $img, Category $category, int $price, String $material)
     {
         parent::__construct($name, $id, $description, $img, $category, $price);
         $this->material = $material;
@@ -50,7 +50,7 @@ class AminalsBed extends Products
 {
     public $dimension;
 
-    public function __construct(String $name, int $id, String $description, String $img, Category $category, int $price, int $dimension)
+    public function __construct(String $name, int $id, String $description, String $img, Category $category, int $price, String $dimension)
     {
         parent::__construct($name, $id, $description, $img, $category, $price);
         $this->dimension = $dimension;
