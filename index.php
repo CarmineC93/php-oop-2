@@ -1,7 +1,10 @@
 <?php
 require_once __DIR__ . "/Models/Products.php";
 require_once __DIR__ . "/Models/Category.php";
-require_once __DIR__ . "/db_.php";
+require_once __DIR__ . "/Models/Toys.php";
+require_once __DIR__ . "/Models/Food.php";
+require_once __DIR__ . "/Models/AnimalsBed.php";
+require_once __DIR__ . "/database/db_.php";
 
 ?>
 
@@ -32,11 +35,24 @@ require_once __DIR__ . "/db_.php";
                                 <h5 class="card-title"><?php echo $product->name; ?></h5>
                                 <img class="icon" src="<?php echo $product->category->printIcon() ?>" alt="">
                                 <p class="card-text"><?php echo $product->category->name; ?></p>
+                                <h6 class="card-title">cod. <?php echo $product->id; ?></h6>
+
                                 <p class="card-text"><?php echo $product->description; ?></p>
-                                <!-- <p class="card-text"><?php //echo $product->printDimension() 
-                                                            ?></p> -->
+                                <?php if (get_class($product) === "Toys") { ?>
+                                    <p class="card-text"><?php echo $product->material ?></p>
+                                <?php } ?>
+
+                                <?php if (get_class($product) === "Food") { ?>
+                                    <p class="card-text"><?php echo $product->weight_kg ?></p>
+                                    <p class="card-text"> Al gusto di: <?php echo $product->taste ?></p>
+                                <?php } ?>
+
+                                <?php if (get_class($product) === "AnimalsBed") { ?>
+                                    <p class="card-text"><?php echo $product->dimension  ?></p>
+                                <?php } ?>
 
 
+                                <h6 class="card-title"><?php echo $product->price; ?> $</h6>
 
                                 <a href="#" class="btn btn-primary">Compra</a>
                             </div>
