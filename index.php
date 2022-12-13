@@ -19,6 +19,7 @@ $guest->basket = new ShoppingBasket();
 $guest->basket->add($gioco2);
 $guest->basket->add($cuccia2);
 $total = $guest->basket->getTotal();
+var_dump($total);
 // pagamento
 $guest->insertCreditCard(new CreditCard("5555 4444 3206 555", "195", "12", "2022"));
 var_dump($guest);
