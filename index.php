@@ -11,14 +11,14 @@ require_once __DIR__ . "/Models/CreditCard.php";
 
 require_once __DIR__ . "/database/db_.php";
 
-
+//SIMNULAZIONE ORDINE 
+//acquirente 
 $guest = new Customer("Enzo", "enzo@libero.com");
+//carrello
 $guest->basket = new ShoppingBasket();
 $guest->basket->add($gioco2);
 $guest->basket->add($cuccia2);
 $total = $guest->basket->getTotal();
-
-
 // pagamento
 $guest->insertCreditCard(new CreditCard("5555 4444 3206 555", "195", "12", "2022"));
 var_dump($guest);

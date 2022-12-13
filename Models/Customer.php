@@ -26,8 +26,6 @@ class Customer
             $this->paymentMethod->getExpirationYear() > date("Y") ||
             ($this->paymentMethod->getExpirationYear() == date("Y") && //NB year dà una stringa quindi uguaglianza non identità
                 $this->paymentMethod->getExpirationMounth() <= date("m"))
-
-
         ) {
             return "la carta è valida, pagato";
         } else {
