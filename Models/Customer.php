@@ -29,14 +29,21 @@ class Customer
         //controllo della scadenza carta
         if (
             $this->paymentMethod->getExpirationYear() > date("Y") ||
-            ($this->paymentMethod->getExpirationYear() == date("Y") && //NB year dà una stringa quindi uguaglianza non identità
-                $this->paymentMethod->getExpirationMounth() <= date("m"))
+            ($this->paymentMethod->getExpirationYear() == date("Y") &&
+                $this->paymentMethod->getExpirationMounth() >= date("m"))
         ) {
+
+            //qui chiamo l'istanza con il messaggio messaggio con echo "invio messaggio : $message a $email";
             $this->setNotification(new EmailNotification());
+            //qui dico cosa deve esserci nel messaggio 
             $this->send($this->email, "Il tuo ordine sarà spedito presto a $this->name");
+
             return "la carta è valida, pagato";
         } else {
-            return "Errore di pagamento. La carta è scaduta";
+            // return "Errore di pagamento. La carta è scaduta";
+
+            //lancio un eccezione
+            throw new Exception("Not a valid card");
         }
     }
 }

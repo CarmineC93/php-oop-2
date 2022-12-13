@@ -21,10 +21,16 @@ $guest->basket->add($cuccia2);
 $total = $guest->basket->getTotal();
 var_dump($total);
 // pagamento
-$guest->insertCreditCard(new CreditCard("5555 4444 3206 555", "195", "12", "2022"));
-var_dump($guest);
-$result = $guest->pay($total);
-var_dump($result);
+try {
+    $guest->insertCreditCard(new CreditCard("5555 4444 3206 555", "195", "8", "2022"));
+    var_dump($guest);
+    $result = $guest->pay($total);
+    var_dump($result);
+} catch (Exception $e) {
+    echo "eccezione: " . $e->getMessage();
+}
+
+
 
 ?>
 
